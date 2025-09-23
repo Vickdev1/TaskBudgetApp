@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Auth — TaskBudgetPlanner</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">TaskBudgetPlanner</a>
+      <nav class="nav">
+        <a href="/tasks.html">Tasks</a>
+        <a href="/budget.html">Budget</a>
+        <a href="/achievements.html">Achievements</a>
+        <a href="/profile.html">Profile</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container form-page">
+    <div class="panel auth-panel">
+      <h2 id="form-title">Login</h2>
+      <form id="auth-form">
+        <input id="name" placeholder="Name (register only)" />
+        <input id="email" type="email" placeholder="Email" required />
+        <input id="password" type="password" placeholder="Password" required />
+        <div class="actions">
+          <button id="auth-button" class="btn">Login</button>
+          <button id="toggle-btn" type="button" class="btn hollow">Switch to Register</button>
+        </div>
+      </form>
+      <div id="auth-msg" class="muted"></div>
+    </div>
+  </main>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

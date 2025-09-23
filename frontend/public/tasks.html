@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Tasks — TaskBudgetPlanner</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">TaskBudgetPlanner</a>
+      <nav class="nav">
+        <a href="/tasks.html">Tasks</a>
+        <a href="/budget.html">Budget</a>
+        <a href="/achievements.html">Achievements</a>
+        <a href="/profile.html">Profile</a>
+        <a id="auth-link" href="/public/auth.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Tasks</h2>
+
+    <section class="panel">
+      <form id="task-form" class="form-inline">
+        <input id="task-title" placeholder="Task title" required />
+        <input id="task-category" placeholder="Category" />
+        <input id="task-due" type="date" />
+        <button class="btn" type="submit">Add Task</button>
+      </form>
+      <div class="filters">
+        <label>Filter:
+          <select id="filter-category"><option value="">All</option></select>
+        </label>
+      </div>
+    </section>
+
+    <section id="tasks-list" class="list"></section>
+
+    <aside class="panel">
+      <h3>Streaks</h3>
+      <div id="streak">No completed tasks yet</div>
+      <button id="check-achievements" class="btn">Check achievements</button>
+    </aside>
+  </main>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/tasks.js"></script>
+</body>
+</html>

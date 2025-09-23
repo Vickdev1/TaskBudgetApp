@@ -1,0 +1,9 @@
+// achievements.js
+document.addEventListener('DOMContentLoaded', async ()=>{
+  const list = document.getElementById('achievements-list');
+  const res = await fetch(`${API_BASE}/achievements`, { headers: authHeader() });
+  const data = await res.json();
+  if(!Array.isArray(data) || data.length===0){ list.innerHTML = '<div class="muted">No achievements yet. Complete tasks or track budget to earn badges.</div>'; return; }
+  list.innerHTML = data.map(a=>`<div class="item"><div><strong>${escapeHtml(a.title)}</strong><div class="meta">${new Date(a.earned_at).toLocaleString()}</div></div><div>${escapeHtml(a.description||'')}</div></div>`).join('');
+  function escapeHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+});
